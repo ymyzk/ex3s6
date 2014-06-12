@@ -1,0 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+import pprint
+import sys
+
+from tinyc.parser import Parser
+
+if __name__ == '__main__':
+    parser = Parser()
+    parser.build()
+    data = sys.stdin.read()
+    ast = parser.parse(data)
+    pprint.pprint(ast)
